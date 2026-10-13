@@ -6,7 +6,7 @@ load_dotenv()
 
 class TrendingService:
     def __init__(self):
-        self.client = BaseHTTPClient(os.enivron["TRENDING_BASE_URL"])
+        self.client = BaseHTTPClient(os.environ["TRENDING_BASE_URL"])
 
     def getTrendingRepos(self):
         try:
