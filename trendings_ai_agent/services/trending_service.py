@@ -28,26 +28,26 @@ class TrendingService:
             response = self.client.getCall("alternatives.json")
             return response 
         except Exception as e:
-            return self.handleError(e)
+            return self.client.handleError(e)
 
     def getGithubTopics(self):
         try:
             response = self.client.getCall("topics.json")
             return response
         except Exception as e:
-            return self.handleError(e)
+            return self.client.handleError(e)
 
     def getGithubStats(self):
         try:
             response = self.client.getCall("stats.json")
             return response 
         except Exception as e:
-            return self._handleError(e)
+            return self.client.handleError(e)
 
     def getRepoGrowthDetails(self, ownerId : str, repoId : str):
         try:
             response = self.client.getCall(f"repos/{ownerId}/{repoId}")
             return response 
         except Exception as e:
-            return self._handleError(e)
+            return self.client.handleError(e)
  
