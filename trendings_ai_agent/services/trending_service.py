@@ -46,7 +46,7 @@ class TrendingService:
 
     def getRepoGrowthDetails(self, ownerId : str, repoId : str):
         try:
-            response = self.client.getCall(f"repos/{ownerId}/{repoId}")
+            response = self.client.getCall(f"repos/{ownerId}/{repoId}.json")
             return response 
         except Exception as e:
             return self.client.handleError(e)
