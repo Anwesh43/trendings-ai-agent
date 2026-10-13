@@ -21,3 +21,12 @@ def getOpenSourceAlternatives():
 def getRepoGrowthDetails(ownerId : str, repoId : str):
     print(f"Calling getRepoGrowthDetails tool for {ownerId} {repoId}")
     return ts.getRepoGrowthDetails(ownerId=ownerId, repoId=repoId)
+
+def getAvailableTools():
+    return [
+        getTrendingRepoStats,
+        getTrendingRepos,
+        getGithubTopics,
+        getOpenSourceAlternatives,
+        getRepoGrowthDetails
+    ]
