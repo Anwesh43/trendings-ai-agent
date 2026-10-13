@@ -6,7 +6,7 @@ class BaseHTTPClient:
     def __init__(self, baseURL : str):
         self.baseURL = baseURL 
 
-    def _handleError(self, e):
+    def handleError(self, e):
         print("Error", e)
         return {
             "status": "Error",
@@ -14,10 +14,7 @@ class BaseHTTPClient:
         }
     
     def getCall(self, endpoint : str, qpParams : Dict = {}): 
-        try:
-            response = requests.get(f"{self.baseURL}/{endpoint}?{urlencode(qpParams)}")
-            response.raise_for_status()
-            return response.json()
-        except Exception as e:
-            return self._handleError(e)
+        response = requests.get(f"{self.baseURL}/{endpoint}?{urlencode(qpParams)}")
+        response.raise_for_status()
+        return response.json()
 
